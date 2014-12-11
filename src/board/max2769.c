@@ -118,22 +118,28 @@ void max2769_configure(void)
                   MAX2769_PLLCONF_VCOEN |
                   MAX2769_PLLCONF_REFOUTEN |
                   //MAX2769_PLLCONF_REFDIV_DIV_2 |  /* 8.184 MHz sample rate */
-                  MAX2769_PLLCONF_REFDIV_DIV_NONE | /* 16.368 MHz sample rate */
+                  //MAX2769_PLLCONF_REFDIV_DIV_NONE | /* 16.368 MHz sample rate */
+                  MAX2769_PLLCONF_REFDIV_2X | /* 32.736  MHz sample rate */
                   MAX2769_PLLCONF_IXTAL_BUFF_NORMAL |
                   MAX2769_PLLCONF_XTALCAP(0b10000) |
                   MAX2769_PLLCONF_LDMUX(0) |
                   MAX2769_PLLCONF_ICP_1MA |
-                  MAX2769_PLLCONF_CPTEST(0) |
+                  MAX2769_PLLCONF_CPTEST(0);
+//                  MAX2769_PLLCONF_CPTEST(0) |
                   MAX2769_PLLCONF_INTPLL;
   max2769_write(MAX2769_PLLCONF, max2769_pllconf);
 
-  max2769_div = //MAX2769_DIV_NDIV(1538) | /* 2 * 1.023 MHz IF */
-                MAX2769_DIV_NDIV(1536) |  /* 4 * 1.023 MHz IF */
-                MAX2769_DIV_RDIV(16);
+  max2769_div =
+                MAX2769_DIV_NDIV(1538) | /* 2 * 1.023 MHz IF */
+                MAX2769_DIV_RDIV(1);
+//                MAX2769_DIV_NDIV(96) |  /* 4 * 1.023 MHz IF */
+//                MAX2769_DIV_NDIV(95) |  /* 4 * 1.023 MHz IF */
+//                MAX2769_DIV_RDIV(1);
   max2769_write(MAX2769_DIV, max2769_div);
 
   max2769_fdiv = MAX2769_FDIV_RESERVED |
-                 MAX2769_FDIV_FDIV(0x80000);
+//                 MAX2769_FDIV_FDIV(0);
+                 MAX2769_FDIV_FDIV(786432);
   max2769_write(MAX2769_FDIV, max2769_fdiv);
 
   max2769_clk = MAX2769_CLK_L_CNT(1) |
