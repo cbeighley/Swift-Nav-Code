@@ -86,7 +86,7 @@ void max2769_configure(void)
                   MAX2769_CONF1_F3OR5_5 |
                   MAX2769_CONF1_FCENX_BP |
                   MAX2769_CONF1_FGAIN_HIGH |
-                  MAX2769_CONF1_LNAMODE_GATED;
+                  MAX2769_CONF1_LNAMODE_LNA2;
   max2769_write(MAX2769_CONF1, max2769_conf1);
 
   max2769_conf2 = //MAX2769_CONF2_IQEN |
@@ -124,14 +124,14 @@ void max2769_configure(void)
                   MAX2769_PLLCONF_XTALCAP(0b10000) |
                   MAX2769_PLLCONF_LDMUX(0) |
                   MAX2769_PLLCONF_ICP_1MA |
-                  MAX2769_PLLCONF_CPTEST(0);
-//                  MAX2769_PLLCONF_CPTEST(0) |
+//                  MAX2769_PLLCONF_CPTEST(0);
+                  MAX2769_PLLCONF_CPTEST(0) |
                   MAX2769_PLLCONF_INTPLL;
   max2769_write(MAX2769_PLLCONF, max2769_pllconf);
 
   max2769_div =
-                MAX2769_DIV_NDIV(1538) | /* 2 * 1.023 MHz IF */
-                MAX2769_DIV_RDIV(1);
+                MAX2769_DIV_NDIV(1536) | /* 2 * 1.023 MHz IF */
+                MAX2769_DIV_RDIV(16);
 //                MAX2769_DIV_NDIV(96) |  /* 4 * 1.023 MHz IF */
 //                MAX2769_DIV_NDIV(95) |  /* 4 * 1.023 MHz IF */
 //                MAX2769_DIV_RDIV(1);
