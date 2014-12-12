@@ -130,16 +130,16 @@ void max2769_configure(void)
   max2769_write(MAX2769_PLLCONF, max2769_pllconf);
 
   max2769_div =
-//                MAX2769_DIV_NDIV(1536) | /* 2 * 1.023 MHz IF */
+//                MAX2769_DIV_NDIV(1536) | /* 4 * 1.023 MHz IF */
 //                MAX2769_DIV_RDIV(16);
-                MAX2769_DIV_NDIV(96) |  /* 4 * 1.023 MHz IF */
-//                MAX2769_DIV_NDIV(95) |  /* 4 * 1.023 MHz IF */
+//                MAX2769_DIV_NDIV(96) |  /* 4 * 1.023 MHz IF */
+                MAX2769_DIV_NDIV(95) |  /* 4 * 1.023 MHz IF */
                 MAX2769_DIV_RDIV(1);
   max2769_write(MAX2769_DIV, max2769_div);
 
   max2769_fdiv = MAX2769_FDIV_RESERVED |
-                 MAX2769_FDIV_FDIV(65536);
-//                 MAX2769_FDIV_FDIV(786432);
+//                 MAX2769_FDIV_FDIV(65536);
+                 MAX2769_FDIV_FDIV(786432);
   max2769_write(MAX2769_FDIV, max2769_fdiv);
 
   max2769_clk = MAX2769_CLK_L_CNT(1) |
