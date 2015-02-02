@@ -139,7 +139,7 @@ void max2769_configure(void)
 
   max2769_fdiv = MAX2769_FDIV_RESERVED |
 //                 MAX2769_FDIV_FDIV(0);
-                 MAX2769_FDIV_FDIV(471859);
+                 MAX2769_FDIV_FDIV(583270);
   max2769_write(MAX2769_FDIV, max2769_fdiv);
 
   max2769_clk = MAX2769_CLK_L_CNT(1) |
