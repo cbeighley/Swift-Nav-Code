@@ -82,14 +82,14 @@ void max2769_configure(void)
                   //MAX2769_CONF1_FCEN(43) | /* 2 Mhz IF filter center freq. */
                   MAX2769_CONF1_FCEN(21) |   /* 4 Mhz IF filter center freq. */
                   //MAX2769_CONF1_FCEN(42) | /* 8 Mhz IF filter center freq. */
-                  MAX2769_CONF1_FBW_2_5MHZ |
+                  MAX2769_CONF1_FBW_18MHZ |
                   MAX2769_CONF1_F3OR5_5 |
-                  MAX2769_CONF1_FCENX_BP |
+                  MAX2769_CONF1_FCENX_LP |
                   MAX2769_CONF1_FGAIN_HIGH |
                   MAX2769_CONF1_LNAMODE_LNA2;
   max2769_write(MAX2769_CONF1, max2769_conf1);
 
-  max2769_conf2 = //MAX2769_CONF2_IQEN |
+  max2769_conf2 = MAX2769_CONF2_IQEN |
                   MAX2769_CONF2_GAINREF(170) |  /* optimal for 2 bits */
                   //MAX2769_CONF2_GAINREF(82) | /* optimal for 3 bits */
                   MAX2769_CONF2_AGCMODE_INDEP |
@@ -108,7 +108,7 @@ void max2769_configure(void)
                   MAX2769_CONF3_FILTEN |
                   MAX2769_CONF3_FHIPEN |
                   MAX2769_CONF3_PGAIEN |
-                  //MAX2769_CONF3_PGAQEN |
+                  MAX2769_CONF3_PGAQEN |
                   /* STRM stuff was set before but its unused,
                    * can leave as zeros. */
                   0;
