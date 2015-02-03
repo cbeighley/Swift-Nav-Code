@@ -175,4 +175,5 @@ if __name__ == "__main__":
   print "Downloading current almanac"
   alm.download_almanac()
   print "Dopplers:"
-  print alm.get_dopps()
+  for d in alm.get_dopps():
+    print d
