@@ -83,7 +83,7 @@ void max2769_configure(void)
                   MAX2769_CONF1_FCEN(21) |   /* 4 Mhz IF filter center freq. */
                   //MAX2769_CONF1_FCEN(42) | /* 8 Mhz IF filter center freq. */
                   MAX2769_CONF1_FBW_18MHZ |
-                  MAX2769_CONF1_F3OR5_5 |
+                  MAX2769_CONF1_F3OR5_3 |
                   MAX2769_CONF1_FCENX_LP |
                   MAX2769_CONF1_FGAIN_HIGH |
                   MAX2769_CONF1_LNAMODE_LNA2;
