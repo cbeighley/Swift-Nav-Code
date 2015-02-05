@@ -94,7 +94,7 @@ void max2769_configure(void)
                   //MAX2769_CONF2_GAINREF(82) | /* optimal for 3 bits */
                   MAX2769_CONF2_AGCMODE_INDEP |
                   MAX2769_CONF2_FORMAT_SIGN_MAG |
-                  MAX2769_CONF2_BITS_1 |
+                  MAX2769_CONF2_BITS_2 |
                   MAX2769_CONF2_DRVCFG_CMOS |
                   MAX2769_CONF2_LOEN;
   max2769_write(MAX2769_CONF2, max2769_conf2);
